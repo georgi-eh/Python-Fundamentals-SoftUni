@@ -15,3 +15,4 @@ for player in players:
 print(f"Team A - {len(team_a)}; Team B - {len(team_b)}")
 if game_terminated:
     print("Game was terminated")
+    
