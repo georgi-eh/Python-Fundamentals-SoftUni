@@ -16,4 +16,3 @@ for num in new_list:
     list_of_integers.append(int(num))
 
 print(list_of_integers)
-
