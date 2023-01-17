@@ -6,5 +6,3 @@ for _ in range(courses):
     course_list.append(course)
 
 print(course_list)
-
-
