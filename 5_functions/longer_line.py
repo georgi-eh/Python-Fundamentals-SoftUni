@@ -9,10 +9,8 @@ y3 = float(input())
 x4 = float(input())
 y4 = float(input())
 
-
 def distance(_x1, _y1, _x2, _y2):
     return (_x2 - _x1) ** 2 + (_y2 - _y1) ** 2
-
 
 x1y1 = distance(x1, y1, 0, 0)
 x2y2 = distance(x2, y2, 0, 0)
