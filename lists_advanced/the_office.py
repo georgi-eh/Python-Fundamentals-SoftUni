@@ -7,3 +7,5 @@ if len(happy_office) >= len(employee) / 2:
     print(f"Score: {len(happy_office)}/{len(employee)}. Employees are happy!")
 else:
     print(f"Score: {len(happy_office)}/{len(employee)}. Employees are not happy!")
+
+print(""
