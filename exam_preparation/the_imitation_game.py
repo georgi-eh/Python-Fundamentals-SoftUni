@@ -1,24 +1,18 @@
-encrypted_message = [char for char in input()]
+encrypted_message = input()
 command = input()
-
 while command != "Decode":
-    lst_of_commands = command.split('|')
-    current_command = lst_of_commands[0]
-
-    if current_command == 'Move':
-        num_of_letters = int(lst_of_commands[1])
-        right_part = encrypted_message[0:num_of_letters]
-        left_part = encrypted_message[num_of_letters::]
-        encrypted_message = left_part + right_part
-    elif current_command == 'Insert':
-        idx = int(lst_of_commands[1])
-        value = lst_of_commands[2]
-        encrypted_message.insert(idx, value)
-    elif current_command == 'ChangeAll':
-        substring = lst_of_commands[1]
-        replacement = lst_of_commands[2]
-        for idx, char in enumerate(encrypted_message):
-            if char == substring:
-                encrypted_message[idx] = replacement
+    current_operation = command.split("|")[0]
+    if current_operation == "Move":
+        number_of_letters = int(command.split("|")[1])
+        encrypted_message = encrypted_message[number_of_letters:] + encrypted_message[0:number_of_letters]
+    elif current_operation == "Insert":
+        index, value = int(command.split("|")[1]), command.split("|")[2]
+        if index != 0:
+            encrypted_message = encrypted_message[0:index] + value + encrypted_message[index:]
+        else:
+            encrypted_message = value + encrypted_message
+    elif current_operation == "ChangeAll":
+        substring, replacement = command.split("|")[1], command.split("|")[2]
+        encrypted_message = encrypted_message.replace(substring, replacement)
     command = input()
-print(f'The decrypted message is: {"".join(encrypted_message)}')
+print(f"The decrypted message is: {encrypted_message}")
